@@ -21,7 +21,7 @@ lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcf
 
 # Header
 with st.container():
-    st.subheader("Hello, I'm Riley :wave:")
+    st.subheader("Hello, I'm Rileyy :wave:")
 
     with st.container():
         st.write("---")
