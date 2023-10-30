@@ -57,51 +57,32 @@ with st.container():
 
 
 # Contact Form
-with st.container():
-    st.write("---")
-    st.header("Contact Me")
-    st.write("##")
+st.write("---")
+st.header("Contact Me")
+
+col1, col2 = st.columns(2)
+
+# Left Column - Contact Form
+with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
-contact_form = """
-<style>
-.form-container {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-}
-.form-container input[type="email"],
-.form-container textarea,
-.form-container button {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 5px;
-}
-.form-container button {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.form-container button:hover {
-    background-color: #45a049;
-}
-</style>
+    st.markdown(
+        """
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+            <div style="margin-bottom: 10px;">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer;">Send</button>
+        </form>
+        """,
+        unsafe_allow_html=True,
+    )
 
-<div class="form-container">
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-</div>
-"""
-
-left_column, right_column = st.columns(2)
-with left_column:
-    st.markdown(contact_form, unsafe_allow_html=True)
-with right_column:
+# Right Column - Empty Space
+with col2:
     st.empty()
-
