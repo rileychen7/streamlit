@@ -63,33 +63,15 @@ with st.container():
     st.write("##")
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
-    email = st.text_input("Your Email")
-    message = st.text_area("Your Message")
-
-    if st.button("Submit"):
-        if email and message:
-            try:
-                smtp_server = "smtp.gmail.com"
-                smtp_port = 587
-                smtp_username = "rileychen2005@gmail.com"
-                smtp_password = "Nexuss2005"
-                sender_email = "your_email@gmail.com"
-                receiver_email = "rileychen2005@example.com"  
-
-                msg = MIMEMultipart()
-                msg["From"] = sender_email
-                msg["To"] = receiver_email
-                msg["Subject"] = "Contact Form Submission"
-
-                msg.attach(MIMEText(f"From: {email}\n\nMessage:\n{message}", "plain"))
-
-                with smtplib.SMTP(smtp_server, smtp_port) as server:
-                    server.starttls()
-                    server.login(smtp_username, smtp_password)
-                    server.sendmail(sender_email, receiver_email, msg.as_string())
-
-                st.success("Message sent successfully!")
-            except Exception as e:
-                st.error(f"Error sending message: {e}")
-        else:
-            st.error("Please fill in both your email and message.")
+contact_form = ""
+   <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+     <input type="email" name="email" placeholder = required>
+     <textarea name = "message" placeholder = "Your Message" required></textarea>
+     <button type="submit">Send</button>
+</form>
+"""
+left_column, right_column = st.column(2)
+with left_column:
+    st.markdown(contact_form, unsafe_allow_html = True)
+with right_column:
+    st.empty()
