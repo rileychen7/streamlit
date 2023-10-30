@@ -61,28 +61,35 @@ with st.container():
     st.header("Contact Me")
     st.write("##")
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
+# ... (other code remains the same)
+
+# Contact Form
+with st.container():
+    st.write("---")
+    st.header("Contact Me")
+    st.write("##")
+    st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
     email = st.text_input("Your Email")
-
     message = st.text_area("Your Message")
 
     if st.button("Submit"):
         if email and message:
-            smtp_server = "smtp.gmail.com"
-            smtp_port = 587
-            smtp_username = "rileychen2005@gmail.com"
-            smtp_password = "Nexuss2005"
-            sender_email = "rileychen2005@gmail.com"
-            receiver_email = "rileychen2005@gmail.com"
-
-            msg = MIMEMultipart()
-            msg["From"] = sender_email
-            msg["To"] = receiver_email
-            msg["Subject"] = "Contact Form Submission"
-
-            msg.attach(MIMEText(f"From: {email}\n\nMessage:\n{message}", "plain"))
-
             try:
+                smtp_server = "smtp.gmail.com"
+                smtp_port = 587
+                smtp_username = "your_email@gmail.com"
+                smtp_password = "your_password"
+                sender_email = "your_email@gmail.com"
+                receiver_email = "receiver_email@example.com"  # Set the receiver's email
+
+                msg = MIMEMultipart()
+                msg["From"] = sender_email
+                msg["To"] = receiver_email
+                msg["Subject"] = "Contact Form Submission"
+
+                msg.attach(MIMEText(f"From: {email}\n\nMessage:\n{message}", "plain"))
+
                 with smtplib.SMTP(smtp_server, smtp_port) as server:
                     server.starttls()
                     server.login(smtp_username, smtp_password)
