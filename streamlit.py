@@ -64,7 +64,7 @@ with st.container():
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
 contact_form = ""
-   <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+<form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
      <input type="email" name="email" placeholder = required>
      <textarea name = "message" placeholder = "Your Message" required></textarea>
      <button type="submit">Send</button>
