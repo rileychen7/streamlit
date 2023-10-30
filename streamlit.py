@@ -13,18 +13,6 @@ def load_lottieur(url):
         return None
     return r.json()
 
-# Add custom background color
-st.write(
-    """
-    <style>
-    body {
-        background-color: #90EE90; /* Hexadecimal color code for light green */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
 
 # Set Streamlit page config
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
