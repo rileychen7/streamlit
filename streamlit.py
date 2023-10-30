@@ -69,13 +69,13 @@ with col1:
     st.markdown(
         """
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-            <div style="margin-bottom: 10px;">
+            <div style="margin-bottom: 20px;">
                 <label for="email" style="font-size: 18px;">Your Email:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; font-size: 16px;">
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; font-size: 16px; background-color: #f5f5f5;">
             </div>
-            <div style="margin-bottom: 10px;">
+            <div style="margin-bottom: 20px;">
                 <label for="message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required style="width: 100%; padding: 10px; font-size: 16px;"></textarea>
+                <textarea id="message" name="message" required style="width: 100%; padding: 10px; font-size: 16px; background-color: #f5f5f5;"></textarea>
             </div>
             <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer;">Send</button>
         </form>
