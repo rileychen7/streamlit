@@ -45,7 +45,7 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
 
     with image_column:
-        # Add your image here, e.g., st.image("path_to_image.png")
+       
         pass
 
     with text_column:
