@@ -71,10 +71,10 @@ with st.container():
             try:
                 smtp_server = "smtp.gmail.com"
                 smtp_port = 587
-                smtp_username = "your_email@gmail.com"
-                smtp_password = "your_password"
+                smtp_username = "rileychen2005@gmail.com"
+                smtp_password = "Nexuss2005"
                 sender_email = "your_email@gmail.com"
-                receiver_email = "receiver_email@example.com"  # Set the receiver's email
+                receiver_email = "receiver_email@example.com"  
 
                 msg = MIMEMultipart()
                 msg["From"] = sender_email
