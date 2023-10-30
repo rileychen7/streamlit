@@ -70,12 +70,12 @@ with col1:
         """
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 10px;">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email" style="font-size: 18px;">Your Email:</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; font-size: 16px;">
             </div>
             <div style="margin-bottom: 10px;">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <label for="message" style="font-size: 18px;">Your Message:</label>
+                <textarea id="message" name="message" required style="width: 100%; padding: 10px; font-size: 16px;"></textarea>
             </div>
             <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer;">Send</button>
         </form>
