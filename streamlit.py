@@ -55,13 +55,6 @@ with st.container():
         Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
 
-# Contact Form
-with st.container():
-    st.write("---")
-    st.header("Contact Me")
-    st.write("##")
-    st.write("Have questions or want to get in touch? Use the form below to contact me!")
-# ... (other code remains the same)
 
 # Contact Form
 with st.container():
