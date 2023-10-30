@@ -64,14 +64,44 @@ with st.container():
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
 contact_form = """
-<form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-     <input type="email" name="email" placeholder = required>
-     <textarea name = "message" placeholder = "Your Message" required></textarea>
-     <button type="submit">Send</button>
-</form>
+<style>
+.form-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-container input[type="email"],
+.form-container textarea,
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+}
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-container button:hover {
+    background-color: #45a049;
+}
+</style>
+
+<div class="form-container">
+    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
 """
+
 left_column, right_column = st.columns(2)
 with left_column:
-    st.markdown(contact_form, unsafe_allow_html = True)
+    st.markdown(contact_form, unsafe_allow_html=True)
 with right_column:
     st.empty()
+
