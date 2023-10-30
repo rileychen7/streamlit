@@ -74,7 +74,7 @@ with st.container():
                 smtp_username = "rileychen2005@gmail.com"
                 smtp_password = "Nexuss2005"
                 sender_email = "your_email@gmail.com"
-                receiver_email = "receiver_email@example.com"  
+                receiver_email = "rileychen2005@example.com"  
 
                 msg = MIMEMultipart()
                 msg["From"] = sender_email
