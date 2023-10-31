@@ -61,29 +61,31 @@ with st.container():
 st.write("---")
 st.header("Contact Me")
 
-col1, col2 = st.columns([2, 1])
+col1, col2 = st.columns([3, 1])  
 
-form_container = col1.beta_container()
+email_input_width = "100%"  
+message_input_width = "100%"  
 
-with form_container:
+with col1:
+    st.write("Have questions or want to get in touch? Use the form below to contact me!")
+
     st.markdown(
-        """
-        Have questions or want to get in touch? Use the form below to contact me!
-        """
+        f"""
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="font-size: 18px;">Your Email:</label>
+                <input type="email" id="email" name="email" required style="width: {email_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for "message" style="font-size: 18px;">Your Message:</label>
+                <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
+        </form>
+        """,
+        unsafe_allow_html=True,
     )
-
-    form = """
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-        <label for="email" style="font-size: 18px;">Your Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 20px;">
-        <label for="message" style="font-size: 18px;">Your Message:</label>
-        <textarea id="message" name="message" required style="width: 100%; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 20px; height: 200px;"></textarea>
-        <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
-    </form>
-    """
-    st.markdown(form, unsafe_allow_html=True)
 
 # Right Column - Empty Space
 with col2:
     st.empty()
-
