@@ -43,11 +43,10 @@ resulting in an enhanced online presence and increased visibility in the digital
 st.write("---")
 st.header("Contact Me")
 
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3, 1])  
 
-email_input_width = "100%"
-message_input_width = "100%"
-message_input_rows = 6  
+email_input_width = "100%"  # Set the width to 100% for responsiveness
+message_input_width = "100%"  # Set the width to 100% for responsiveness
 
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
@@ -61,7 +60,7 @@ with col1:
             </div>
             <div style="margin-bottom: 20px;">
                 <label for "message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required rows="{message_input_rows}" style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
             </div>
             <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
         </form>
