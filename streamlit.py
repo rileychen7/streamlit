@@ -71,7 +71,7 @@ with col1:
         """
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
-                <label type = "hidden" name = "_captcha" value = "false">
+                <label type = "hidden" name = "_captcha" value = "False">
                 <label for="email" style="font-size: 18px;">Your Email:</label>
                 <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; font-size: 16px; background-color: #dee0df;">
             </div>
