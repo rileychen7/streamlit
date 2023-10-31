@@ -3,7 +3,7 @@ import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 
-# Define the Lottie animation loading function
+# Define the Lottie animation
 def load_lottieur(url):
     r = requests.get(url)
     if r.status_code != 200:
