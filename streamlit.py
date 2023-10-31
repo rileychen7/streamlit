@@ -25,9 +25,6 @@ st.write("""I am a freshman computer science student at the University at Buffal
 Currently, I am diving deep into the world of Python and using it to help me build this personal website. But when I'm not immersed in the world of Python you can often find me playing
 badminton, soccer, or eating. I look forward to expanding my knowledge and taking on exciting challenges that lie ahead.""")
 
-# Display the Lottie animation
-st_lottie(lottie_coding)
-
 # Projects
 st.write("---")
 st.header("My Projects")
@@ -68,6 +65,16 @@ with col1:
         unsafe_allow_html=True,
     )
 
-# Right Column - Empty Space
+# Right Column - Place Lottie Animation
 with col2:
-    st.empty()
+    st.markdown(
+        f"""
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <h3>Lottie Animation</h3>
+            <div style="width: 200px;">  # Set the width to control the size of the animation
+                {st_lottie(lottie_coding)}
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
