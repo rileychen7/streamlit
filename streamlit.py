@@ -62,4 +62,12 @@ with col1:
                 <label for "message" style="font-size: 18px;">Your Message:</label>
                 <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
             </div>
-            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</
+            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
+        </form>
+        """,
+        unsafe_allow_html=True,
+    )
+
+# Right Column - Empty Space
+with col2:
+    st.empty()
