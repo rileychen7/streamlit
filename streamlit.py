@@ -63,8 +63,8 @@ st.header("Contact Me")
 
 col1, col2 = st.columns(2)
 
-email_input_width = "100%"
-message_input_width = "100%"
+email_input_width = "200%"
+message_input_width = "200%"
 
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
