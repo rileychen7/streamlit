@@ -58,7 +58,7 @@ with st.container():
 st.write("---")
 st.header("Contact Me")
 
-col1, col2 = st.columns([3, 1])  
+col1, col2 = st.columns([4, 2])  
 
 email_input_width = "100%"  
 message_input_width = "100%"  
