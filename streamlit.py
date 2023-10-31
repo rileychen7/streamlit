@@ -43,10 +43,10 @@ resulting in an enhanced online presence and increased visibility in the digital
 st.write("---")
 st.header("Contact Me")
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([3, 1])  # Adjust the column widths
 
-email_input_width = "200%"
-message_input_width = "200%"
+email_input_width = "100%"  # Set the width to 100% for responsiveness
+message_input_width = "100%"  # Set the width to 100% for responsiveness
 
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
@@ -55,20 +55,11 @@ with col1:
         f"""
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
-                <label type="hidden" name="_captcha" value="False">
                 <label for="email" style="font-size: 18px;">Your Email:</label>
-                <input type="email" id="email" name="email" required style="width: {email_input_width}; padding: 10px; font-size: 16px; background-color: #dee0df;">
+                <input type="email" id="email" name="email" required style="width: {email_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;">
             </div>
             <div style="margin-bottom: 20px;">
                 <label for "message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #dee0df;"></textarea>
+                <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
             </div>
-            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer;">Send</button>
-        </form>
-        """,
-        unsafe_allow_html=True,
-    )
-
-# Right Column - Empty Space
-with col2:
-    st.empty()
+            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</
