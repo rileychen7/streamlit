@@ -43,7 +43,7 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
 
     with image_column:
-        st.image("/Users/rileychen/Documents/website/streamlit_picture.png", use_column_width=True)
+        st.image("streamlit_picture.png", use_column_width=True)
 
     with text_column:
         st.subheader("Personal Website")
