@@ -43,7 +43,7 @@ with st.container():
     image_column, text_column = st.columns((1, 2))
 
     with image_column:
-        st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fthenewstack.io%2Fstreamlit-an-app-builder-for-the-data-science-team%2F&psig=AOvVaw3jrRXTGnvzhnchb6ELqXkG&ust=1699040466523000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOjeu42JpoIDFQAAAAAdAAAAABAE", use_column_width=True)
+        st.image("/Users/rileychen/Documents/website/streamlit_picture.png", use_column_width=True)
 
     with text_column:
         st.subheader("Personal Website")
