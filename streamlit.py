@@ -15,7 +15,7 @@ def load_lottieur(url):
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
 # Load Lottie animation
-lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_coding = load_lottieur("animation_lmtnqn8s.json")
 
 # Header
 with st.container():
