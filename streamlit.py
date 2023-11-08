@@ -10,6 +10,7 @@ def load_lottieur(url):
         return None
     return r.json()
 
+
 # Set Streamlit page config
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
@@ -46,52 +47,40 @@ with st.container():
 
     with text_column:
         st.subheader("Personal Website")
-        st.write("""Leveraged Streamlit to create a dynamic personal website, highlighting industry insights and accomplishments, resulting in an enhanced online presence. 
+        st.write("""-Leveraged Streamlit to create a dynamic personal website, highlighting industry insights and accomplishments, resulting in an enhanced online presence. 
         Developing a visually captivating and interactive platform not only enhanced the accessibility of accomplishments but also substantially magnified visibility in the expansive digital landscape.
         Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
-    
-with st.container():
-    image_column, text_column = st.columns((1, 2))
-    
-    with image_column:
-        st.image("campuscrumbs.png", use_column_width=True)
-
-    with text_column:
-        st.subheader("Campus Crumbs")
-        st.write("""This was a website my team and I created for UB Hacking which is the annual hackathon by the University at Buffalo. This was my first time going to a hackathon. 
-        Have you ever been hungry but were too tired or had no time to get food from campus, and getting Uber Eats or Doordash was just too expensive and would take too much time?
-        This is why my team and I created a platform where college students and professors can get campus food delivered directly to them! With this new application not only will students and 
-        professors get their food faster, but it will also create more job opportunities for students because this will all be student-run! Check out the website [here](https://campuscrumbs.streamlit.app/), unsafe_allow_html=True"")
 
 
 # Contact Form
 st.write("---")
 st.header("Contact Me")
 
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3, 1])  
 
-email_input_width = "100%"
-message_input_width = "100%"
+email_input_width = "100%"  
+message_input_width = "100%"  
 
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
-    form_html = f"""
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-        <div style="margin-bottom: 20px;">
-            <label for="email" style="font-size: 18px;">Your Email:</label>
-            <input type="email" id="email" name="email" required style="width: {email_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;">
-        </div>
-        <div style="margin-bottom: 20px;">
-            <label for="message" style="font-size: 18px;">Your Message:</label>
-            <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-        </div>
-        <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
-    </form>
-    """
-
-    st.markdown(form_html, unsafe_allow_html=True)
+    st.markdown(
+        f"""
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="font-size: 18px;">Your Email:</label>
+                <input type="email" id="email" name="email" required style="width: {email_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for "message" style="font-size: 18px;">Your Message:</label>
+                <textarea id="message" name="message" required style="width: {message_input_width}; padding: 10px; font-size: 16px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            <button type="submit" style="background-color: #2ecc71; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Send</button>
+        </form>
+        """,
+        unsafe_allow_html=True,
+    )
 
 # Right Column - Empty Space
 with col2:
