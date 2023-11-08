@@ -65,8 +65,9 @@ with st.container():
 
 
 # Contact Form
-st.write("---")
-st.header("Contact Me")
+with st.container()
+    st.write("---")
+    st.header("Contact Me")
 
 col1, col2 = st.columns([3, 1])  
 
