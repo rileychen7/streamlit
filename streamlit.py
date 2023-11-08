@@ -41,7 +41,15 @@ with st.container():
     st.header("My Projects")
     st.write("##")
     image_column, text_column = st.columns((1, 2))
-
+    
+    with text_column:
+        st.subheader("Campus Crumbs")
+        st.write("""This was a website my team and I created for UB Hacking which is the annual hackathon by the University at Buffalo. This was my first time going to a hackathon. 
+        Have you ever been hungry but were too tired or had no time to get food from campus, and getting Uber Eats or Doordash was just too expensive and would take too much time?
+        This is why my team and I created a platform where college students and professors can get campus food delivered directly to them! With this new application not only will students and 
+        professors get their food faster, but it will also create more job opportunities for students because this will all be student-run! Check out the website [here](https://campuscrumbs.streamlit.app/), unsafe_allow_html=True"")
+    
+    image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image("streamlit_picture.png", use_column_width=True)
 
