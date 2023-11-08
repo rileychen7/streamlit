@@ -40,11 +40,10 @@ with st.container():
     st.write("---")
     st.header("My Projects")
     st.write("##")
-    image_column, text_column = st.columns((1, 2))
     
+    image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image("streamlit_picture.png", use_column_width=True)
-
     with text_column:
         st.subheader("Personal Website")
         st.write("""Leveraged Streamlit to create a dynamic personal website, highlighting industry insights and accomplishments, resulting in an enhanced online presence. 
