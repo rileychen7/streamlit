@@ -11,10 +11,8 @@ def load_lottieur(url):
     return r.json()
 
 
-# Set Streamlit page config
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
-# Load Lottie animation
 lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
 # Header
@@ -79,6 +77,6 @@ with col1:
         unsafe_allow_html=True,
     )
 
-# Right Column - Empty Space
+
 with col2:
     st.empty()
