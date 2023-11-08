@@ -10,6 +10,31 @@ def load_lottieur(url):
         return None
     return r.json()
 
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+    }
+    .stApp {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .stHeader {
+        background-color: #2ecc71;
+        color: #fff;
+        padding: 20px;
+        border-radius: 0 0 15px 15px;
+    }
+    .stLottie {
+        text-align: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 
 # Set Streamlit page config
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
@@ -85,3 +110,4 @@ with col1:
 # Right Column - Empty Space
 with col2:
     st.empty()
+
