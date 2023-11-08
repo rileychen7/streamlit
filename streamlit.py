@@ -77,7 +77,7 @@ message_input_width = "100%"
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
 
-    form_html = f"""
+    form_html = """
     <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
         <div style="margin-bottom: 20px;">
             <label for="email" style="font-size: 18px;">Your Email:</label>
