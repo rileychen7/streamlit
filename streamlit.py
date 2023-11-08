@@ -50,8 +50,10 @@ with st.container():
         Developing a visually captivating and interactive platform not only enhanced the accessibility of accomplishments but also substantially magnified visibility in the expansive digital landscape.
         Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
-
-    st.write("---")
+    
+    st.write("")
+    st.write("")
+    
     with image_column:
         st.image("logo1.png", use_column_width=True)
 
