@@ -55,7 +55,7 @@ with st.container():
 with st.container():
     image_column, text_column = st.columns((1,2))
     
-    with text.column:
+    with text_column:
         st.subheader("Campus Crumbs")
         st.write("""hello""")
         
