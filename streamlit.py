@@ -52,6 +52,14 @@ with st.container():
         Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
 
+with st.container():
+    image_column, text_column = st.columns((1,2))
+    
+    with text.column:
+        st.subheader("Campus Crumbs")
+        st.write("""hello""")
+        
+
 
 # Contact Form
 st.write("---")
