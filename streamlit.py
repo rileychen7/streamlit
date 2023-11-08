@@ -52,7 +52,7 @@ with st.container():
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
 
 with image_column:
-    st.image("", use_column_width = True)
+    #st.image("", use_column_width = True)
 
 with text_column:
     st.subheader("Campus Crumbs")
