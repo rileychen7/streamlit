@@ -46,13 +46,6 @@ with st.container():
         Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
         resulting in an enhanced online presence and increased visibility in the digital landscape.""")
 
-    st.write("---")
-    st.subheader("Campus Crumbs")
-    st.write("""This was a website my team and I created for UB Hacking which is the annual hackathon by the University at Buffalo. This was my first time going to a hackathon. 
-        Have you ever been hungry but were too tired or had no time to get food from campus, and getting Uber Eats or Doordash was just too expensive and would take too much time?
-        This is why my team and I created a platform where college students and professors can get campus food delivered directly to them! With this new application not only will students and 
-        professors get their food faster, it will also create more job opportunities for students because this will all be student-run.""")
-
 
 # Contact Form
 st.write("---")
