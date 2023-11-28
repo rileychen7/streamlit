@@ -10,7 +10,6 @@ def load_lottieur(url):
         return None
     return r.json()
 
-
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
 lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
@@ -18,7 +17,6 @@ lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcf
 # Header
 with st.container():
     st.subheader("Hello, I'm Riley :wave:")
-
     with st.container():
         st.write("---")
         left_column, right_column = st.columns(2)
@@ -76,7 +74,6 @@ with col1:
         """,
         unsafe_allow_html=True,
     )
-
 
 with col2:
     st.empty()
