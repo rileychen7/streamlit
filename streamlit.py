@@ -13,7 +13,6 @@ def load_lottieur(url):
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
 lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-)
 
 # Header
 with st.container():
