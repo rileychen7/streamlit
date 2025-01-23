@@ -39,7 +39,7 @@ with st.container():
         st.image("streamlit_picture.png", use_container_width=True)
     with text_column:
         st.subheader("Personal Website")
-        st.write("""You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, which has boosted my websites user engagement by 52%. .""")
+        st.write("""You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. I will be continuing to add more content in the future!""")
 
 
 # Contact Form
