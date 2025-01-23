@@ -39,10 +39,7 @@ with st.container():
         st.image("streamlit_picture.png", use_container_width=True)
     with text_column:
         st.subheader("Personal Website")
-        st.write("""Leveraged Streamlit to create a dynamic personal website, highlighting industry insights and accomplishments, resulting in an enhanced online presence. 
-        Developing a visually captivating and interactive platform not only enhanced the accessibility of accomplishments but also substantially magnified visibility in the expansive digital landscape.
-        Through the implementation of a user-friendly contact form and feedback system, the personal website experienced a 50% rise in user-provided insights and networking connections, 
-        resulting in an enhanced online presence and increased visibility in the digital landscape.""")
+        st.write("""You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, which has boosted my websites user engagement by 52%. .""")
 
 
 # Contact Form
