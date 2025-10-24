@@ -1,3 +1,4 @@
+import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 import json
@@ -5,7 +6,17 @@ import json
 # --- Page Config ---
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
-# --- Load Local Lottie Animations ---
+# --- Load Lottie Animations ---
+def load_lottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+# Original Lottie for About Me section
+lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+
+# Local Lotties for projects
 with open("coding.json", "r") as f:
     lottie_coding_local = json.load(f)
 
@@ -61,7 +72,7 @@ with st.container():
         )
 
     with right_column:
-        st_lottie(lottie_coding_local, height=300, key="about_coding")
+        st_lottie(lottie_coding, height=300, key="about_coding")
 
 # --- Projects Section ---
 st.write("---")
