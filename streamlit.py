@@ -22,7 +22,7 @@ with st.container():
         with left_column:
             st.header("About Me")
             st.write("##")
-            st.write("""I am a sophomore at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science. Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.""")
+            st.write("""I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics. Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.""")
 
     # Display the Lottie animation
     with right_column:
