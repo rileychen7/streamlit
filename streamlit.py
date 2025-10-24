@@ -129,7 +129,7 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2>Personal Website</h2>
+            <h2><a href="https://rileychen.streamlit.app/" target="_blank" style="color: inherit; text-decoration: none;">Personal Website</a></h2>
             <p>You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. I will be continuing to add more content in the future!</p>
         </div>
         ''', unsafe_allow_html=True)
