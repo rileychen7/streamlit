@@ -13,32 +13,32 @@ st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
 lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
-# Header
-with st.container():
-    st.subheader("Hello, I'm Riley :wave:")
-    with st.container():
-        st.write("---")
-        left_column, right_column = st.columns(2)
-        with left_column:
-            st.header("About Me")
-            st.write("##")
-            st.write("""I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics. Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.""")
-
-    # Display the Lottie animation
-    with right_column:
-        st_lottie(lottie_coding)
-
 # Projects
+# --- My Projects Section ---
 with st.container():
     st.write("---")
     st.header("My Projects")
     st.write("##")
+
+# --- Project 1: Personal Website ---
+with st.container():
     image_column, text_column = st.columns((1,2))
     with image_column:
         st.image("streamlit_picture.png", use_container_width=True)
     with text_column:
         st.subheader("Personal Website")
-        st.write("""You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. I will be continuing to add more content in the future!""")
+        st.write("""You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. 
+        The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. 
+        I will be continuing to add more content in the future!""")
+
+# --- Project 2: Campus Crumbs ---
+with st.container():
+    image_column, text_column = st.columns((1,2))
+    with image_column:
+        st.image("campuscrumbs.png", use_container_width=True)
+    with text_column:
+        st.subheader("Campus Crumbs")
+        st.write("""There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.""")
 
 
 # Contact Form
