@@ -78,28 +78,45 @@ a {{
 </style>
 """, unsafe_allow_html=True)
 
-# --- Header / About Me Section ---
+# --- About Me Section ---
 with st.container():
     st.subheader("Hello, I'm Riley :wave:")
     st.write("---")
-    left_column, right_column = st.columns([1, 2])
-    with left_column:
-        st_lottie(lottie_coding, height=220, key="about_coding")
-    with right_column:
-        st.markdown(f'''
-        <div class="section">
-            <h2>About Me</h2>
-            <p>I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics.</p>
-            <p>Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.</p>
-        </div>
-        ''', unsafe_allow_html=True)
+
+    # Three columns: Lottie | Info | Portrait
+    col1, col2, col3 = st.columns([1, 1.5, 1])
+
+    # Lottie animation on left
+    with col1:
+        st_lottie(lottie_coding, height=220, key="about_coding_lottie")
+
+    # Info in middle column
+    with col2:
+        st.markdown(f"###### 😄 Name: Riley Chen")
+        st.markdown(f"###### 👉 Study: Mathematics (Actuarial Science), Minor: Statistics")
+        st.markdown(f"###### 📍 Location: Buffalo, NY")
+        st.markdown(f"###### 📚 Interest: Badminton, Soccer, Exploring cuisines")
+        st.markdown(f"###### 👀 LinkedIn: [My Profile](https://www.linkedin.com/in/rileychen/)")
+
+        with open("src/resume.pdf", "rb") as file:
+            pdf_file = file.read()
+        st.download_button(
+            label="Download my :blue[resume]",
+            data=pdf_file,
+            file_name="resume.pdf",
+            mime="application/pdf"
+        )
+
+    # Portrait on right
+    with col3:
+        st.image("src/portrait.jpeg", width=360)
 
 # --- Projects Section ---
 st.write("---")
 st.header("My Projects")
 st.write("##")
 
-# --- Project 1: Personal Website ---
+# Project 1: Personal Website
 with st.container():
     col1, col2 = st.columns([1, 2])
     with col1:
@@ -112,7 +129,7 @@ with st.container():
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Project 2: Campus Crumbs ---
+# Project 2: Campus Crumbs
 with st.container():
     col1, col2 = st.columns([1, 2])
     with col1:
