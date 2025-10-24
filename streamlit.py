@@ -25,12 +25,6 @@ st.markdown(
         font-family: 'Roboto', sans-serif;
     }
 
-    /* Hover effect for images */
-    .project-img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    }
-
     /* Section padding and rounded cards */
     .section {
         padding: 40px;
@@ -84,41 +78,45 @@ st.header("My Projects")
 st.write("##")
 
 # --- Project 1: Personal Website ---
-st.markdown(
-    """
-    <div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-        <div style="display: flex; align-items: center;">
-            <img src="streamlit_picture.png" class="project-img" style="width: 40%; border-radius:10px; margin-right: 20px;">
-            <div>
-                <h3>Personal Website</h3>
-                <p>You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. 
-                The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. 
-                I will be continuing to add more content in the future!</p>
-            </div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+with st.container():
+    st.markdown(
+        '<div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">',
+        unsafe_allow_html=True
+    )
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        st.image("streamlit_picture.png", use_container_width=True)
+    with col2:
+        st.subheader("Personal Website")
+        st.write(
+            "You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. "
+            "The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. "
+            "I will be continuing to add more content in the future!"
+        )
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # --- Project 2: Campus Crumbs ---
-st.markdown(
-    """
-    <div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-        <div style="display: flex; align-items: center;">
-            <img src="campuscrumbs.png" class="project-img" style="width: 40%; border-radius:10px; margin-right: 20px;">
-            <div>
-                <h3><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="text-decoration:none; color:#3498db;">Campus Crumbs</a></h3>
-                <p>There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. 
-                While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. 
-                Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. 
-                It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.</p>
-            </div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+with st.container():
+    st.markdown(
+        '<div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">',
+        unsafe_allow_html=True
+    )
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        st.image("campuscrumbs.png", use_container_width=True)
+    with col2:
+        st.markdown(
+            '### [Campus Crumbs](https://campuscrumbs.streamlit.app/)',
+            unsafe_allow_html=True,
+        )
+        st.write(
+            "There are days when the thought of leaving our dorms just to grab a meal feels like a task, "
+            "especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, "
+            "we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. "
+            "Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. "
+            "It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps."
+        )
+    st.markdown("</div>", unsafe_allow_html=True)
 
 # --- Fun Lottie Section ---
 with st.container():
