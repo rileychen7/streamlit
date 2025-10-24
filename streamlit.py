@@ -5,15 +5,15 @@ from streamlit_lottie import st_lottie
 # --- Page Config ---
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
-# --- Load Lottie Animation ---
-def load_lottieur(url):
+# --- Load Lottie Animations ---
+def load_lottie(url):
     r = requests.get(url)
     if r.status_code != 200:
         return None
     return r.json()
 
-lottie_coding = load_lottieur("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-lottie_fun = load_lottieur("https://assets2.lottiefiles.com/packages/lf20_5ngs2ksb.json")  # extra animation
+lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+lottie_food_delivery = load_lottie("https://assets5.lottiefiles.com/packages/lf20_5ngs2ksb.json")
 
 # --- Custom CSS ---
 st.markdown(
@@ -85,7 +85,7 @@ with st.container():
     )
     col1, col2 = st.columns([1, 2])
     with col1:
-        st.image("streamlit_picture.png", use_container_width=True)
+        st_lottie(lottie_coding, height=300, key="personal_website")
     with col2:
         st.subheader("Personal Website")
         st.write(
@@ -103,7 +103,7 @@ with st.container():
     )
     col1, col2 = st.columns([1, 2])
     with col1:
-        st.image("campuscrumbs.png", use_container_width=True)
+        st_lottie(lottie_food_delivery, height=300, key="campus_crumbs")
     with col2:
         st.markdown(
             '### [Campus Crumbs](https://campuscrumbs.streamlit.app/)',
@@ -120,7 +120,7 @@ with st.container():
 
 # --- Fun Lottie Section ---
 with st.container():
-    st_lottie(lottie_fun, height=200, key="fun")
+    st_lottie(lottie_food_delivery, height=200, key="fun")
 
 # --- Contact Form ---
 st.write("---")
