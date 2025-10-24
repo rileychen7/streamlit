@@ -154,17 +154,19 @@ st.header("Contact Me")
 col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f'''
-    <div class="section">
+    <div class="section" style="padding: 50px 40px;">
         <h2>Get in Touch</h2>
-        <p>Have questions or want to get in touch? Use the form below!</p>
-        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+        <p style="max-width: 100%;">Have questions or want to get in touch? Use the form below!</p>
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST" style="max-width: 100%;">
             <div style="margin-bottom: 20px;">
                 <label for="email" style="font-size: 18px;">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required
+                    style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
             </div>
             <div style="margin-bottom: 20px;">
                 <label for="message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" required
+                    style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
             </div>
             <button type="submit" class="submit-btn">Send</button>
         </form>
