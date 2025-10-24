@@ -100,18 +100,14 @@ with st.container():
         st.markdown(f"###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)")
 
         # Resume download safely
-        resume_path = "src/Riley_Chen.pdf"
-        if os.path.exists(resume_path):
-            with open(resume_path, "rb") as file:
-                pdf_file = file.read()
-            st.download_button(
-                label="Download my :blue[resume]",
-                data=pdf_file,
-                file_name="resume.pdf",
-                mime="application/pdf"
-            )
-        else:
-            st.warning("Resume file not found. Upload riley_chen.pdf to enable download.")
+        with open("src/Riley_Chen.pdf", "rb") as file:
+            pdf_file = file.read()
+
+        st.download_button(
+            label="Download my :blue[resume]",
+            data=pdf_file,
+            file_name="resume",
+            mime="application/pdf")
 
 # --- Projects Section ---
 st.write("---")
