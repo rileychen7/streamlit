@@ -113,7 +113,7 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank">Campus Crumbs</a></h2>
+            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="color: inherit; text-decoration: none;">Campus Crumbs</a></h2>
             <p>There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.</p>
         </div>
         ''', unsafe_allow_html=True)
