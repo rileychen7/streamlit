@@ -13,10 +13,8 @@ def load_lottie(url):
         return None
     return r.json()
 
-# Original Lottie for About Me section
 lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
-# Local Lotties for projects
 with open("coding.json", "r") as f:
     lottie_coding_local = json.load(f)
 
@@ -32,9 +30,16 @@ st.markdown(
         font-family: 'Roboto', sans-serif;
     }
     .section {
-        padding: 40px;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         border-radius: 15px;
+        padding: 40px 30px;
         margin-bottom: 30px;
+    }
+    .section-flex {
+        display: flex;
+        gap: 40px;
+        align-items: center;
     }
     .submit-btn {
         background-color: #2ecc71;
@@ -57,22 +62,18 @@ st.markdown(
 with st.container():
     st.subheader("Hello, I'm Riley :wave:")
     st.write("---")
-    left_column, right_column = st.columns(2)
-
-    with left_column:
-        st.markdown(
-            """
-            <div class="section" style="background: linear-gradient(to right, #f5f5f5, #e0f7fa);">
+    st.markdown('''
+        <div class="section section-flex" style="background: linear-gradient(to right, #f5f5f5, #e0f7fa);">
+            <div style="flex: 1; min-width: 240px;">''' +
+            st_lottie(lottie_coding, height=220, key="about_coding", speed=1, reverse=False, loop=True, quality="low", renderer="svg", width=None, height="220", return_html=True) +
+            '''</div>
+            <div style="flex: 2;">
                 <h2>About Me</h2>
                 <p>I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics.</p>
                 <p>Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.</p>
             </div>
-            """,
-            unsafe_allow_html=True
-        )
-
-    with right_column:
-        st_lottie(lottie_coding, height=300, key="about_coding")
+        </div>
+    ''', unsafe_allow_html=True)
 
 # --- Projects Section ---
 st.write("---")
@@ -80,56 +81,40 @@ st.header("My Projects")
 st.write("##")
 
 # --- Project 1: Personal Website ---
-with st.container():
-    st.markdown(
-        '<div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">',
-        unsafe_allow_html=True
-    )
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        st_lottie(lottie_coding_local, height=300, key="personal_website")
-    with col2:
-        st.subheader("Personal Website")
-        st.write(
-            "You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. "
-            "The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. "
-            "I will be continuing to add more content in the future!"
-        )
-    st.markdown("</div>", unsafe_allow_html=True)
+st.markdown('''
+    <div class="section section-flex">
+        <div style="flex: 1; min-width: 240px;">''' +
+        st_lottie(lottie_coding_local, height=220, key="personal_website", speed=1, reverse=False, loop=True, quality="low", renderer="svg", width=None, height="220", return_html=True) +
+        '''</div>
+        <div style="flex: 2;">
+            <h2>Personal Website</h2>
+            <p>You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. I will be continuing to add more content in the future!</p>
+        </div>
+    </div>
+''', unsafe_allow_html=True)
 
 # --- Project 2: Campus Crumbs ---
-with st.container():
-    st.markdown(
-        '<div class="section" style="background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">',
-        unsafe_allow_html=True
-    )
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        st_lottie(lottie_food_local, height=300, key="campus_crumbs")
-    with col2:
-        st.markdown(
-            '### [Campus Crumbs](https://campuscrumbs.streamlit.app/)',
-            unsafe_allow_html=True,
-        )
-        st.write(
-            "There are days when the thought of leaving our dorms just to grab a meal feels like a task, "
-            "especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, "
-            "we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. "
-            "Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. "
-            "It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps."
-        )
-    st.markdown("</div>", unsafe_allow_html=True)
+st.markdown('''
+    <div class="section section-flex">
+        <div style="flex: 1; min-width: 240px;">''' +
+        st_lottie(lottie_food_local, height=220, key="campus_crumbs", speed=1, reverse=False, loop=True, quality="low", renderer="svg", width=None, height="220", return_html=True) +
+        '''</div>
+        <div style="flex: 2;">
+            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="text-decoration: none; color: inherit;">Campus Crumbs</a></h2>
+            <p>There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.</p>
+        </div>
+    </div>
+''', unsafe_allow_html=True)
 
 # --- Contact Form ---
 st.write("---")
 st.header("Contact Me")
 
 col1, col2 = st.columns([3, 1])
-
 with col1:
     st.write("Have questions or want to get in touch? Use the form below to contact me!")
     st.markdown(
-        f"""
+        '''
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
                 <label for="email" style="font-size: 18px;">Your Email:</label>
@@ -143,9 +128,8 @@ with col1:
             </div>
             <button type="submit" class="submit-btn">Send</button>
         </form>
-        """,
+        ''',
         unsafe_allow_html=True,
     )
-
 with col2:
     st.empty()
