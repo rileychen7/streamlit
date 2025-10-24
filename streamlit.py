@@ -15,6 +15,7 @@ def load_lottie(url):
 
 lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
+# Local Lottie files
 with open("coding.json", "r") as f:
     lottie_coding_local = json.load(f)
 
@@ -36,7 +37,7 @@ html, body, [class*="css"] {{
     font-family: 'Roboto', sans-serif;
 }}
 .section {{
-    background: {card_bg};
+    background: linear-gradient(to right, #f5f5f5, #e0f7fa);
     color: {text_color};
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 15px;
@@ -44,8 +45,8 @@ html, body, [class*="css"] {{
     margin-bottom: 30px;
 }}
 .submit-btn {{
-    background-color: #2ecc71;
-    color: #fff;
+    background-color: #e0f7fa;
+    color: {text_color};
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -53,7 +54,7 @@ html, body, [class*="css"] {{
     font-size: 16px;
 }}
 .submit-btn:hover {{
-    background-color: #27ae60;
+    opacity: 0.8;
 }}
 input, textarea {{
     background-color: {input_bg} !important;
@@ -62,6 +63,10 @@ input, textarea {{
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
+}}
+a {{
+    color: inherit;
+    text-decoration: none;
 }}
 </style>
 """, unsafe_allow_html=True)
@@ -75,7 +80,7 @@ with st.container():
         st_lottie(lottie_coding, height=220, key="about_coding")
     with right_column:
         st.markdown(f'''
-        <div class="section" style="background: linear-gradient(to right, #f5f5f5, #e0f7fa); color: {'#000' if not is_dark else '#f5f5f5'};">
+        <div class="section">
             <h2>About Me</h2>
             <p>I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics.</p>
             <p>Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.</p>
@@ -108,63 +113,30 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="text-decoration: none; color: inherit;">Campus Crumbs</a></h2>
+            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank">Campus Crumbs</a></h2>
             <p>There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.</p>
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Contact Form with Matching Gradient ---
+# --- Contact Form ---
 st.write("---")
 st.header("Contact Me")
 
 col1, col2 = st.columns([3, 1])
 with col1:
+    st.write("Have questions or want to get in touch? Use the form below to contact me!")
     st.markdown(f'''
-    <div class="section" style="
-        background: radial-gradient(circle at 10% 20%, #f5f5f5 0%, #e0f7fa 100%);
-        position: relative;
-        overflow: hidden;
-    ">
-        <h2 style="color: #000;">Get in Touch</h2>
-        <p style="color: #000;">Have questions or want to get in touch? Use the form below to contact me!</p>
-        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-            <div style="margin-bottom: 20px;">
-                <label for="email" style="font-size: 18px; color: #000;">Your Email:</label>
-                <input type="email" id="email" name="email" required
-                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label for="message" style="font-size: 18px; color: #000;">Your Message:</label>
-                <textarea id="message" name="message" required
-                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send</button>
-        </form>
-        <!-- Decorative Bubbles -->
-        <div style="
-            position: absolute;
-            width: 100px; height: 100px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.05);
-            top: 20px; left: 30px;
-            animation: float 6s infinite ease-in-out;
-        "></div>
-        <div style="
-            position: absolute;
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.03);
-            bottom: 20px; right: 50px;
-            animation: float 8s infinite ease-in-out;
-        "></div>
-    </div>
-    <style>
-    @keyframes float {{
-        0%, 100% {{ transform: translateY(0px); }}
-        50% {{ transform: translateY(-20px); }}
-    }}
-    </style>
+    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+        <div style="margin-bottom: 20px;">
+            <label for="email" style="font-size: 18px;">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="message" style="font-size: 18px;">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send</button>
+    </form>
     ''', unsafe_allow_html=True)
-
 with col2:
     st.empty()
