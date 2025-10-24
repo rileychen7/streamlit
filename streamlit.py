@@ -113,7 +113,7 @@ with st.container():
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Contact Form with Bubble Background ---
+# --- Contact Form with Matching Gradient ---
 st.write("---")
 st.header("Contact Me")
 
@@ -121,20 +121,20 @@ col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f'''
     <div class="section" style="
-        background: radial-gradient(circle at 10% 20%, #2ecc71 0%, #27ae60 100%);
+        background: radial-gradient(circle at 10% 20%, #f5f5f5 0%, #e0f7fa 100%);
         position: relative;
         overflow: hidden;
     ">
-        <h2 style="color: #fff;">Get in Touch</h2>
-        <p style="color: #f5f5f5;">Have questions or want to get in touch? Use the form below to contact me!</p>
+        <h2 style="color: #000;">Get in Touch</h2>
+        <p style="color: #000;">Have questions or want to get in touch? Use the form below to contact me!</p>
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
-                <label for="email" style="font-size: 18px; color: #fff;">Your Email:</label>
+                <label for="email" style="font-size: 18px; color: #000;">Your Email:</label>
                 <input type="email" id="email" name="email" required
                     style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;">
             </div>
             <div style="margin-bottom: 20px;">
-                <label for="message" style="font-size: 18px; color: #fff;">Your Message:</label>
+                <label for="message" style="font-size: 18px; color: #000;">Your Message:</label>
                 <textarea id="message" name="message" required
                     style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;"></textarea>
             </div>
@@ -145,7 +145,7 @@ with col1:
             position: absolute;
             width: 100px; height: 100px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.05);
             top: 20px; left: 30px;
             animation: float 6s infinite ease-in-out;
         "></div>
@@ -153,7 +153,7 @@ with col1:
             position: absolute;
             width: 150px; height: 150px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.03);
             bottom: 20px; right: 50px;
             animation: float 8s infinite ease-in-out;
         "></div>
