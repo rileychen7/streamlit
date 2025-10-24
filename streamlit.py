@@ -2,6 +2,7 @@ import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 import json
+import os
 
 # --- Page Config ---
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
@@ -86,29 +87,39 @@ with st.container():
     # Three columns: Lottie | Info | Portrait
     col1, col2, col3 = st.columns([1, 1.5, 1])
 
-    # Lottie animation on left
+    # Lottie animation
     with col1:
         st_lottie(lottie_coding, height=220, key="about_coding_lottie")
 
-    # Info in middle column
+    # Info
     with col2:
         st.markdown(f"###### 😄 Name: Riley Chen")
         st.markdown(f"###### 👉 Study: Mathematics (Actuarial Science), Minor: Statistics")
         st.markdown(f"###### 📍 Location: Buffalo, NY")
         st.markdown(f"###### 📚 Interest: Badminton, Soccer, Exploring cuisines")
-        st.markdown(f"###### 👀 Linkedin: {www.linkedin.com/in/riley-chen--}")
-        with open("riley_chen.pdf", "rb") as file:
-            pdf_file = file.read()
-        st.download_button(
-            label="Download my :blue[resume]",
-            data=pdf_file,
-            file_name="resume.pdf",
-            mime="application/pdf"
-        )
+        st.markdown(f"###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)")
 
-    # Portrait on right
+        # Resume download safely
+        resume_path = "riley_chen.pdf"
+        if os.path.exists(resume_path):
+            with open(resume_path, "rb") as file:
+                pdf_file = file.read()
+            st.download_button(
+                label="Download my :blue[resume]",
+                data=pdf_file,
+                file_name="resume.pdf",
+                mime="application/pdf"
+            )
+        else:
+            st.warning("Resume file not found. Upload riley_chen.pdf to enable download.")
+
+    # Portrait
     with col3:
-        st.image("src/portrait.jpeg", width=360)
+        portrait_path = "src/portrait.jpeg"
+        if os.path.exists(portrait_path):
+            st.image(portrait_path, width=360)
+        else:
+            st.warning("Portrait image not found.")
 
 # --- Projects Section ---
 st.write("---")
