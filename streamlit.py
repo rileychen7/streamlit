@@ -99,16 +99,7 @@ with st.container():
         st.markdown(f"###### 📚 Interest: Badminton, Soccer, Exploring cuisines")
         st.markdown(f"###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)")
 
-       ''' # Resume download safely
-        with open("src/Riley_Chen.pdf", "rb") as file:
-            pdf_file = file.read()
 
-        st.download_button(
-            label="Download my :blue[resume]",
-            data=pdf_file,
-            file_name="resume",
-            mime="application/pdf")
-            '''
 
 # --- Projects Section ---
 st.write("---")
