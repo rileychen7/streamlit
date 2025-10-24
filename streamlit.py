@@ -1,6 +1,7 @@
 import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
+import json
 
 # --- Page Config ---
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
@@ -13,7 +14,10 @@ def load_lottie(url):
     return r.json()
 
 lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-lottie_food_delivery = load_lottie("https://assets5.lottiefiles.com/packages/lf20_5ngs2ksb.json")
+
+# --- Load Local Lottie for Campus Crumbs ---
+with open("food.json", "r") as f:
+    lottie_food_local = json.load(f)
 
 # --- Custom CSS ---
 st.markdown(
@@ -103,7 +107,7 @@ with st.container():
     )
     col1, col2 = st.columns([1, 2])
     with col1:
-        st_lottie(lottie_food_delivery, height=300, key="campus_crumbs")
+        st_lottie(lottie_food_local, height=300, key="campus_crumbs")
     with col2:
         st.markdown(
             '### [Campus Crumbs](https://campuscrumbs.streamlit.app/)',
