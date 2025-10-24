@@ -96,8 +96,7 @@ with st.container():
         st.markdown(f"###### 👉 Study: Mathematics (Actuarial Science), Minor: Statistics")
         st.markdown(f"###### 📍 Location: Buffalo, NY")
         st.markdown(f"###### 📚 Interest: Badminton, Soccer, Exploring cuisines")
-        st.markdown(f"###### 👀 LinkedIn: [My Profile](www.linkedin.com/in/riley-chen--)")
-
+        st.markdown(f"###### 👀 Linkedin: {www.linkedin.com/in/riley-chen--}")
         with open("riley_chen.pdf", "rb") as file:
             pdf_file = file.read()
         st.download_button(
