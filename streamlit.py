@@ -37,7 +37,7 @@ with st.container():
     with image_column:
         st.image("campuscrumbs.png", use_container_width=True)
     with text_column:
-        st.markdown("### [Campus Crumbs](https://your-campuscrumbs-url.com)", unsafe_allow_html=True)
+        st.markdown("### [Campus Crumbs](https://campuscrumbs.streamlit.app/)", unsafe_allow_html=True)
         st.write("""There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. 
         While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. 
         Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. 
