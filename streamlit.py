@@ -18,7 +18,6 @@ lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjw
 # Local Lottie files
 with open("coding.json", "r") as f:
     lottie_coding_local = json.load(f)
-
 with open("food.json", "r") as f:
     lottie_food_local = json.load(f)
 
@@ -33,17 +32,46 @@ input_text = "#f5f5f5" if is_dark else "#000"
 st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 html, body, [class*="css"] {{
     font-family: 'Roboto', sans-serif;
 }}
+
+/* Section styling with animated gradient */
 .section {{
-    background: linear-gradient(to right, #f5f5f5, #e0f7fa);
+    background: linear-gradient(120deg, #f5f5f5, #e0f7fa);
+    background-size: 200% 200%;
     color: {text_color};
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border-radius: 15px;
     padding: 40px 30px;
     margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
 }}
+.section.visible {{
+    opacity: 1;
+    transform: translateY(0px);
+}}
+
+/* Gradient animation */
+@keyframes gradientShift {{
+    0% {{ background-position: 0% 50%; }}
+    50% {{ background-position: 100% 50%; }}
+    100% {{ background-position: 0% 50%; }}
+}}
+.section {{
+    animation: gradientShift 15s ease infinite;
+}}
+
+/* Hover lift effect */
+.section:hover {{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}}
+
+/* Buttons */
 .submit-btn {{
     background-color: #e0f7fa;
     color: {text_color};
@@ -52,10 +80,14 @@ html, body, [class*="css"] {{
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    transition: all 0.2s ease-in-out;
 }}
 .submit-btn:hover {{
-    opacity: 0.8;
+    transform: scale(1.05);
+    opacity: 0.9;
 }}
+
+/* Inputs */
 input, textarea {{
     background-color: {input_bg} !important;
     color: {input_text} !important;
@@ -64,11 +96,32 @@ input, textarea {{
     padding: 10px;
     font-size: 16px;
 }}
+
+/* Links */
 a {{
     color: inherit;
     text-decoration: none;
 }}
+
+/* Fade-in on scroll */
 </style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {{
+    const sections = document.querySelectorAll(".section");
+    function checkVisible() {{
+        const triggerBottom = window.innerHeight * 0.85;
+        sections.forEach(section => {{
+            const sectionTop = section.getBoundingClientRect().top;
+            if(sectionTop < triggerBottom) {{
+                section.classList.add("visible");
+            }}
+        }});
+    }}
+    window.addEventListener("scroll", checkVisible);
+    checkVisible();
+}});
+</script>
 """, unsafe_allow_html=True)
 
 # --- Header / About Me Section ---
@@ -118,57 +171,28 @@ with st.container():
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Contact Form with Matching Gradient ---
+# --- Contact Form ---
 st.write("---")
 st.header("Contact Me")
 
 col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f'''
-    <div class="section" style="
-        background: radial-gradient(circle at 10% 20%, #f5f5f5 0%, #e0f7fa 100%);
-        position: relative;
-        overflow: hidden;
-    ">
-        <h2 style="color: #000;">Get in Touch</h2>
-        <p style="color: #000;">Have questions or want to get in touch? Use the form below to contact me!</p>
+    <div class="section">
+        <h2 style="color: {text_color};">Get in Touch</h2>
+        <p style="color: {text_color};">Have questions or want to get in touch? Use the form below to contact me!</p>
         <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
-                <label for="email" style="font-size: 18px; color: #000;">Your Email:</label>
-                <input type="email" id="email" name="email" required
-                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;">
+                <label for="email" style="font-size: 18px; color: {text_color};">Your Email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div style="margin-bottom: 20px;">
-                <label for="message" style="font-size: 18px; color: #000;">Your Message:</label>
-                <textarea id="message" name="message" required
-                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <label for="message" style="font-size: 18px; color: {text_color};">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send</button>
         </form>
-        <!-- Decorative Bubbles -->
-        <div style="
-            position: absolute;
-            width: 100px; height: 100px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.05);
-            top: 20px; left: 30px;
-            animation: float 6s infinite ease-in-out;
-        "></div>
-        <div style="
-            position: absolute;
-            width: 150px; height: 150px;
-            border-radius: 50%;
-            background: rgba(0,0,0,0.03);
-            bottom: 20px; right: 50px;
-            animation: float 8s infinite ease-in-out;
-        "></div>
     </div>
-    <style>
-    @keyframes float {{
-        0%, 100% {{ transform: translateY(0px); }}
-        50% {{ transform: translateY(-20px); }}
-    }}
-    </style>
     ''', unsafe_allow_html=True)
 
 with col2:
