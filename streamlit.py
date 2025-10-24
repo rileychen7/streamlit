@@ -113,25 +113,58 @@ with st.container():
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Contact Form ---
+# --- Contact Form with Bubble Background ---
 st.write("---")
 st.header("Contact Me")
 
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.write("Have questions or want to get in touch? Use the form below to contact me!")
     st.markdown(f'''
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-        <div style="margin-bottom: 20px;">
-            <label for="email" style="font-size: 18px;">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div style="margin-bottom: 20px;">
-            <label for="message" style="font-size: 18px;">Your Message:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send</button>
-    </form>
+    <div class="section" style="
+        background: radial-gradient(circle at 10% 20%, #2ecc71 0%, #27ae60 100%);
+        position: relative;
+        overflow: hidden;
+    ">
+        <h2 style="color: #fff;">Get in Touch</h2>
+        <p style="color: #f5f5f5;">Have questions or want to get in touch? Use the form below to contact me!</p>
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="font-size: 18px; color: #fff;">Your Email:</label>
+                <input type="email" id="email" name="email" required
+                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="message" style="font-size: 18px; color: #fff;">Your Message:</label>
+                <textarea id="message" name="message" required
+                    style="width: 100%; padding: 10px; font-size: 16px; background-color: {input_bg}; color: {input_text}; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+        <!-- Decorative Bubbles -->
+        <div style="
+            position: absolute;
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            top: 20px; left: 30px;
+            animation: float 6s infinite ease-in-out;
+        "></div>
+        <div style="
+            position: absolute;
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            bottom: 20px; right: 50px;
+            animation: float 8s infinite ease-in-out;
+        "></div>
+    </div>
+    <style>
+    @keyframes float {{
+        0%, 100% {{ transform: translateY(0px); }}
+        50% {{ transform: translateY(-20px); }}
+    }}
+    </style>
     ''', unsafe_allow_html=True)
+
 with col2:
     st.empty()
