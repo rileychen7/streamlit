@@ -118,10 +118,6 @@ with st.container():
         )
     st.markdown("</div>", unsafe_allow_html=True)
 
-# --- Fun Lottie Section ---
-with st.container():
-    st_lottie(lottie_food_delivery, height=200, key="fun")
-
 # --- Contact Form ---
 st.write("---")
 st.header("Contact Me")
