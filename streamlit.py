@@ -94,9 +94,9 @@ with st.container():
     # Info
     with col2:
         st.markdown(f"###### 😄 Name: Riley Chen")
-        st.markdown(f"###### 👉 Study: Mathematics (Actuarial Science), Minor: Statistics")
+        st.markdown(f"###### 📚 Study: Mathematics (Actuarial Science), Minor: Statistics")
         st.markdown(f"###### 📍 Location: Buffalo, NY")
-        st.markdown(f"###### 📚 Interest: BJJ, Gym, Badminton, Soccer, Exploring cuisines")
+        st.markdown(f"###### 🏋️ Interest: BJJ, Gym, Badminton, Soccer, Exploring cuisines")
         st.markdown(f"###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)")
 
 
