@@ -8,6 +8,20 @@ def load_lottieur(url):
     if r.status_code != 200:
         return None
     return r.json()
+    # Header
+with st.container():
+    st.subheader("Hello, I'm Riley :wave:")
+    with st.container():
+        st.write("---")
+        left_column, right_column = st.columns(2)
+        with left_column:
+            st.header("About Me")
+            st.write("##")
+            st.write("""I am a junior at the University at Buffalo, majoring in Mathematics with a concentration in Actuarial Science, and a minor in Statistics. Outside of academics, I enjoy playing badminton, soccer, and exploring different cuisines. I’m excited to keep expanding my knowledge and embracing new challenges ahead.""")
+
+    # Display the Lottie animation
+    with right_column:
+        st_lottie(lottie_coding)
 
 st.set_page_config(page_title="My Webpage", page_icon=":snake:", layout="wide")
 
