@@ -113,14 +113,6 @@ with st.container():
         else:
             st.warning("Resume file not found. Upload riley_chen.pdf to enable download.")
 
-    # Portrait
-    with col3:
-        portrait_path = "src/portrait.jpeg"
-        if os.path.exists(portrait_path):
-            st.image(portrait_path, width=360)
-        else:
-            st.warning("Portrait image not found.")
-
 # --- Projects Section ---
 st.write("---")
 st.header("My Projects")
