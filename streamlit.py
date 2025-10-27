@@ -47,7 +47,7 @@ lottie_food_local = load_local_lottie("food.json")
 is_dark_default = False
 
 # ========== Page CSS & JS ==========
-page_css = f"""
+page_css = """
 <style>
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
