@@ -153,23 +153,33 @@ with st.container():
         st.warning("Sorry to hear that 😞 — thanks for the honesty!")
 
     # 📬 Contact Form
-    st.write("")
-    st.write("")
-    st.subheader("Get in Touch")
+ st.write("---")
+st.subheader("Get in Touch")
 
-    with st.form(key="contact_form"):
-        name = st.text_input("Your name", value="Riley Chen")
-        email = st.text_input("Your email", value="rchen92@buffalo.edu")
-        message = st.text_area("Your message here")
-        submitted = st.form_submit_button("Send")
+with st.form("contact_form"):
+    name = st.text_input("Your name")
+    email = st.text_input("Your email")
+    message = st.text_area("Your message here")
+    submitted = st.form_submit_button("Send")
 
-        if submitted:
-            if name and email and message:
-                # (You can replace this section with actual email sending later)
-                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                st.success(f"✅ Message sent successfully at {timestamp}")
-            else:
-                st.error("Please fill out all fields before sending.")
+    if submitted:
+        if not name or not email or not message:
+            st.error("Please fill out all fields")
+        else:
+            try:
+                msg = EmailMessage()
+                msg['Subject'] = f'New message from {name}'
+                msg['From'] = email
+                msg['To'] = EMAIL_ADDRESS
+                msg.set_content(f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}")
+
+                with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                    smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+                    smtp.send_message(msg)
+
+                st.success("✅ Message sent successfully!")
+            except Exception as e:
+                st.error(f"Error sending message: {e}")
 
     # 🎨 Styling
     st.markdown("""
