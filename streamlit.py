@@ -23,10 +23,10 @@ with open("food.json", "r") as f:
 
 # --- Detect Streamlit Theme ---
 is_dark = st.get_option("theme.base") == "dark"
-card_bg = "#1e1e1e" if is_dark else "#fff"
 text_color = "#f5f5f5" if is_dark else "#000"
 input_bg = "#2e2e2e" if is_dark else "#f0f0f0"
 input_text = "#f5f5f5" if is_dark else "#000"
+section_bg = "linear-gradient(135deg, #89f7fe, #66a6ff)" if not is_dark else "linear-gradient(135deg, #1e1e1e, #2a2a2a)"
 
 # --- Custom CSS ---
 st.markdown(f"""
@@ -37,7 +37,7 @@ html, body, [class*="css"] {{
 }}
 
 .section {{
-  background: {card_bg};
+  background: {section_bg};
   color: {text_color};
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   border-radius: 15px;
@@ -46,8 +46,8 @@ html, body, [class*="css"] {{
 }}
 
 .submit-btn {{
-  background-color: #e0f7fa;
-  color: {text_color};
+  background-color: #00bcd4;
+  color: white;
   padding: 12px 25px;
   border: none;
   cursor: pointer;
@@ -91,6 +91,11 @@ input, textarea {{
 .feedback button:hover {{
   transform: scale(1.2);
 }}
+
+a {{
+  color: inherit;
+  text-decoration: none;
+}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -126,7 +131,7 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://rileychen.streamlit.app/" target="_blank" style="color: inherit;">Personal Website</a></h2>
+            <h2><a href="https://rileychen.streamlit.app/" target="_blank">Personal Website</a></h2>
             <p>You're currently viewing my personal website, built with Streamlit to showcase projects and insights. The platform includes an interactive contact form and feedback system.</p>
         </div>
         ''', unsafe_allow_html=True)
@@ -139,7 +144,7 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="color: inherit;">Campus Crumbs</a></h2>
+            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank">Campus Crumbs</a></h2>
             <p>Campus Crumbs lets UB students order from any campus dining location and have it delivered to their dorm in under 15 minutes — no need to step outside or pay delivery app fees.</p>
         </div>
         ''', unsafe_allow_html=True)
@@ -147,7 +152,7 @@ with st.container():
 # --- Quick Feedback Section ---
 st.write("---")
 st.markdown("""
-<div style="text-align:center; margin-bottom:10px;">
+<div style="text-align:center; margin-bottom:5px;">
   <h3>Quick Feedback</h3>
   <p style="font-size:15px;">Tap an emoji to give 1-second feedback</p>
 </div>
@@ -173,7 +178,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Contact Section ---
-#st.header("Contact Me")
+st.header("Contact Me")
 col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f'''
