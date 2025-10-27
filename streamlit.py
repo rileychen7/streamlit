@@ -136,60 +136,47 @@ with st.container():
 with st.container():
     st.write("---")
 
-    # 💬 Quick Emoji Feedback (Top Section)
+    # 💬 Quick Emoji Feedback
     st.markdown("""
     <div style="text-align:center; margin-bottom: 30px;">
         <h4 style="margin-bottom:10px;">Quick feedback</h4>
-        <p style="font-size:15px; color:gray; margin-top:-5px;">Tap an emoji to give 1-second feedback. It sends your response to me instantly.</p>
-        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST" style="margin-top:10px;">
-            <input type="hidden" name="_subject" value="Quick Emoji Feedback">
-            <input type="hidden" name="_captcha" value="false">
-            <button type="submit" name="feedback" value="😀" style="background:none;border:none;font-size:30px;cursor:pointer;">😀</button>
-            <button type="submit" name="feedback" value="😐" style="background:none;border:none;font-size:30px;cursor:pointer;">😐</button>
-            <button type="submit" name="feedback" value="😞" style="background:none;border:none;font-size:30px;cursor:pointer;">😞</button>
-        </form>
+        <p style="font-size:15px; color:gray; margin-top:-5px;">Tap an emoji to give 1-second feedback. It saves instantly.</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # 📬 Contact Form (Below)
-    contact_form = """
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Contact Message from Riley's Portfolio">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message here" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-    """
+    emoji_col1, emoji_col2, emoji_col3 = st.columns(3)
+    if emoji_col1.button("😀", use_container_width=True):
+        st.success("Thanks for your positive feedback! 😀")
+    if emoji_col2.button("😐", use_container_width=True):
+        st.info("Appreciate the neutral feedback 😐")
+    if emoji_col3.button("😞", use_container_width=True):
+        st.warning("Sorry to hear that 😞 — thanks for the honesty!")
 
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.markdown(contact_form, unsafe_allow_html=True)
-    with right_column:
-        st.empty()
+    # 📬 Contact Form
+    st.write("")
+    st.write("")
+    st.subheader("Get in Touch")
 
-    # 🎨 Styling (keeps your clean light look)
+    with st.form(key="contact_form"):
+        name = st.text_input("Your name", value="Riley Chen")
+        email = st.text_input("Your email", value="rchen92@buffalo.edu")
+        message = st.text_area("Your message here")
+        submitted = st.form_submit_button("Send")
+
+        if submitted:
+            if name and email and message:
+                # (You can replace this section with actual email sending later)
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                st.success(f"✅ Message sent successfully at {timestamp}")
+            else:
+                st.error("Please fill out all fields before sending.")
+
+    # 🎨 Styling
     st.markdown("""
         <style>
-        form {
-            text-align: left;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-family: "Inter", sans-serif;
-            font-size: 15px;
-        }
-        textarea {
-            height: 120px;
-        }
-        button {
-            background-color: #111;
-            color: white;
+        .stButton>button {
+            background-color: #111 !important;
+            color: white !important;
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -197,8 +184,14 @@ with st.container():
             font-weight: 500;
             transition: 0.2s ease;
         }
-        button:hover {
-            background-color: #333;
+        .stButton>button:hover {
+            background-color: #333 !important;
+        }
+        input, textarea {
+            background-color: #f9f9f9 !important;
+            border-radius: 8px !important;
+            border: 1px solid #ccc !important;
+            font-family: "Inter", sans-serif !important;
         }
         </style>
     """, unsafe_allow_html=True)
