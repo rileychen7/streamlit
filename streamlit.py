@@ -16,10 +16,8 @@ def load_lottie(url):
 
 lottie_coding = load_lottie("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 
-# Local Lottie files
 with open("coding.json", "r") as f:
     lottie_coding_local = json.load(f)
-
 with open("food.json", "r") as f:
     lottie_food_local = json.load(f)
 
@@ -34,47 +32,64 @@ input_text = "#f5f5f5" if is_dark else "#000"
 st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 html, body, [class*="css"] {{
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }}
 
 .section {{
-    background: linear-gradient(to right, #f5f5f5, #e0f7fa);
-    color: {text_color};
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border-radius: 15px;
-    padding: 40px 30px;
-    margin-bottom: 30px;
+  background: {card_bg};
+  color: {text_color};
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
 }}
 
 .submit-btn {{
-    background-color: #e0f7fa;
-    color: {text_color};
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
+  background-color: #e0f7fa;
+  color: {text_color};
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
 }}
 
 .submit-btn:hover {{
-    transform: scale(1.05);
-    opacity: 0.85;
+  transform: scale(1.05);
+  opacity: 0.85;
 }}
 
 input, textarea {{
-    background-color: {input_bg} !important;
-    color: {input_text} !important;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
+  background-color: {input_bg} !important;
+  color: {input_text} !important;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
 }}
 
-a {{
-    color: inherit;
-    text-decoration: none;
+.feedback {{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}}
+
+.feedback form {{
+  display: inline-block;
+}}
+
+.feedback button {{
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}}
+
+.feedback button:hover {{
+  transform: scale(1.2);
 }}
 </style>
 """, unsafe_allow_html=True)
@@ -84,27 +99,26 @@ with st.container():
     st.subheader("Hello, I'm Riley :wave:")
     st.write("---")
 
-    # Three columns: Lottie | Info | Portrait
     col1, col2, col3 = st.columns([1, 1.5, 1])
 
-    # Lottie animation
     with col1:
         st_lottie(lottie_coding, height=220, key="about_coding_lottie")
 
-    # Info
     with col2:
-        st.markdown(f"###### 😄 Name: Riley Chen")
-        st.markdown(f"###### 📚 Study: Mathematics (Actuarial Science), Minor: Statistics")
-        st.markdown(f"###### 📍 Location: Buffalo, NY")
-        st.markdown(f"###### 🏋️ Interest: BJJ, Gym, Badminton, Soccer, Exploring cuisines")
-        st.markdown(f"###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)")
+        st.markdown(f"""
+        ###### 😄 Name: Riley Chen  
+        ###### 📚 Study: Mathematics (Actuarial Science), Minor: Statistics  
+        ###### 📍 Location: Buffalo, NY  
+        ###### 🏋️ Interest: BJJ, Gym, Badminton, Soccer, Exploring cuisines  
+        ###### 👀 Linkedin: [Link](https://www.linkedin.com/in/riley-chen--)  
+        """)
 
 # --- Projects Section ---
 st.write("---")
 st.header("My Projects")
 st.write("##")
 
-# Project 1: Personal Website
+# Project 1
 with st.container():
     col1, col2 = st.columns([1, 2])
     with col1:
@@ -112,12 +126,12 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://rileychen.streamlit.app/" target="_blank" style="color: inherit; text-decoration: none;">Personal Website</a></h2>
-            <p>You're currently viewing my personal website, built with Streamlit to showcase personal projects and insights. The platform features an interactive contact form and feedback system, boosting my website's user engagement by 52%. I will be continuing to add more content in the future!</p>
+            <h2><a href="https://rileychen.streamlit.app/" target="_blank" style="color: inherit;">Personal Website</a></h2>
+            <p>You're currently viewing my personal website, built with Streamlit to showcase projects and insights. The platform includes an interactive contact form and feedback system.</p>
         </div>
         ''', unsafe_allow_html=True)
 
-# Project 2: Campus Crumbs
+# Project 2
 with st.container():
     col1, col2 = st.columns([1, 2])
     with col1:
@@ -125,59 +139,59 @@ with st.container():
     with col2:
         st.markdown(f'''
         <div class="section">
-            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="color: inherit; text-decoration: none;">Campus Crumbs</a></h2>
-            <p>There are days when the thought of leaving our dorms just to grab a meal feels like a task, especially when juggling assignments or feeling under the weather. While apps like UberEats and DoorDash exist, we, as budget-conscious college students, aim to save money and make the most of our prepaid meal plans. Order whatever's available from any dining option on campus and have your food delivered in less than 15 minutes. It's the ultimate solution for satisfying your cravings without the hassle, right at your dormsteps.</p>
+            <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank" style="color: inherit;">Campus Crumbs</a></h2>
+            <p>Campus Crumbs lets UB students order from any campus dining location and have it delivered to their dorm in under 15 minutes — no need to step outside or pay delivery app fees.</p>
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Contact Form Section ---
+# --- Quick Feedback Section ---
 st.write("---")
-st.header("Contact Me")
+st.markdown("""
+<div style="text-align:center; margin-bottom:10px;">
+  <h3>Quick Feedback</h3>
+  <p style="font-size:15px;">Tap an emoji to give 1-second feedback</p>
+</div>
 
+<div class="feedback">
+  <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+    <input type="hidden" name="feedback" value="😍 Loved it!">
+    <button type="submit">😍</button>
+  </form>
+  <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+    <input type="hidden" name="feedback" value="🙂 It was good!">
+    <button type="submit">🙂</button>
+  </form>
+  <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+    <input type="hidden" name="feedback" value="😐 It's okay.">
+    <button type="submit">😐</button>
+  </form>
+  <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+    <input type="hidden" name="feedback" value="😞 Needs improvement.">
+    <button type="submit">😞</button>
+  </form>
+</div>
+""", unsafe_allow_html=True)
+
+# --- Contact Section ---
+#st.header("Contact Me")
 col1, col2 = st.columns([3, 1])
 with col1:
     st.markdown(f'''
     <div class="section" style="padding: 50px 40px;">
         <h2>Get in Touch</h2>
-        <p style="max-width: 100%;">Have questions or want to get in touch? Use the form below!</p>
-        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST" style="max-width: 100%;">
+        <p>Have questions or want to get in touch? Use the form below!</p>
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
             <div style="margin-bottom: 20px;">
-                <label for="email" style="font-size: 18px;">Your Email:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required style="width: 100%;">
             </div>
             <div style="margin-bottom: 20px;">
-                <label for="message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required style="width: 100%;"></textarea>
             </div>
             <button type="submit" class="submit-btn">Send</button>
         </form>
     </div>
     ''', unsafe_allow_html=True)
-
 with col2:
     st.empty()
-
-# --- Quick Feedback Section ---
-st.write("---")
-st.header("Quick Feedback")
-
-st.markdown(f"""
-<div class="section" style="text-align: center; padding: 40px 20px;">
-  <h2>Quick Feedback</h2>
-  <p>Tap an emoji to give 1-second feedback. It sends your response anonymously 😊</p>
-  <div style="font-size: 45px; display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-      <input type="hidden" name="_subject" value="Feedback: Loved It!">
-      <button type="submit" style="background:none; border:none; cursor:pointer;">👍</button>
-    </form>
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-      <input type="hidden" name="_subject" value="Feedback: It’s Okay">
-      <button type="submit" style="background:none; border:none; cursor:pointer;">😐</button>
-    </form>
-    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-      <input type="hidden" name="_subject" value="Feedback: Needs Improvement">
-      <button type="submit" style="background:none; border:none; cursor:pointer;">👎</button>
-    </form>
-  </div>
-</div>
-""", unsafe_allow_html=True)
