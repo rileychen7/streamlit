@@ -21,81 +21,75 @@ with open("coding.json", "r") as f:
 with open("food.json", "r") as f:
     lottie_food_local = json.load(f)
 
-# --- Detect Streamlit Theme ---
-is_dark = st.get_option("theme.base") == "dark"
-text_color = "#f5f5f5" if is_dark else "#000"
-input_bg = "#2e2e2e" if is_dark else "#f0f0f0"
-input_text = "#f5f5f5" if is_dark else "#000"
-section_bg = "linear-gradient(135deg, #89f7fe, #66a6ff)" if not is_dark else "linear-gradient(135deg, #1e1e1e, #2a2a2a)"
-
 # --- Custom CSS ---
-st.markdown(f"""
+st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-html, body, [class*="css"] {{
-  font-family: 'Roboto', sans-serif;
-}}
 
-.section {{
-  background: {section_bg};
-  color: {text_color};
+html, body, [class*="css"] {
+  font-family: 'Roboto', sans-serif;
+}
+
+.section {
+  background: linear-gradient(to right, #f5f5f5, #e0f7fa);
+  color: #000;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   border-radius: 15px;
   padding: 40px 30px;
   margin-bottom: 30px;
-}}
+}
 
-.submit-btn {{
-  background-color: #00bcd4;
-  color: white;
+.submit-btn {
+  background-color: #e0f7fa;
+  color: #000;
   padding: 12px 25px;
   border: none;
   cursor: pointer;
   border-radius: 8px;
   font-size: 16px;
-}}
+}
 
-.submit-btn:hover {{
+.submit-btn:hover {
   transform: scale(1.05);
   opacity: 0.85;
-}}
+}
 
-input, textarea {{
-  background-color: {input_bg} !important;
-  color: {input_text} !important;
+input, textarea {
+  background-color: #f0f0f0 !important;
+  color: #000 !important;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
-}}
+}
 
-.feedback {{
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.feedback {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
-}}
+  gap: 12px;
+  margin-bottom: 25px;
+}
 
-.feedback form {{
+.feedback form {
   display: inline-block;
-}}
+}
 
-.feedback button {{
+.feedback button {
   background: none;
   border: none;
   font-size: 26px;
   cursor: pointer;
   transition: transform 0.15s ease;
-}}
+}
 
-.feedback button:hover {{
+.feedback button:hover {
   transform: scale(1.2);
-}}
-
-a {{
-  color: inherit;
-  text-decoration: none;
-}}
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -110,7 +104,7 @@ with st.container():
         st_lottie(lottie_coding, height=220, key="about_coding_lottie")
 
     with col2:
-        st.markdown(f"""
+        st.markdown("""
         ###### 😄 Name: Riley Chen  
         ###### 📚 Study: Mathematics (Actuarial Science), Minor: Statistics  
         ###### 📍 Location: Buffalo, NY  
@@ -129,7 +123,7 @@ with st.container():
     with col1:
         st_lottie(lottie_coding_local, height=220, key="personal_website")
     with col2:
-        st.markdown(f'''
+        st.markdown('''
         <div class="section">
             <h2><a href="https://rileychen.streamlit.app/" target="_blank">Personal Website</a></h2>
             <p>You're currently viewing my personal website, built with Streamlit to showcase projects and insights. The platform includes an interactive contact form and feedback system.</p>
@@ -142,7 +136,7 @@ with st.container():
     with col1:
         st_lottie(lottie_food_local, height=220, key="campus_crumbs")
     with col2:
-        st.markdown(f'''
+        st.markdown('''
         <div class="section">
             <h2><a href="https://campuscrumbs.streamlit.app/" target="_blank">Campus Crumbs</a></h2>
             <p>Campus Crumbs lets UB students order from any campus dining location and have it delivered to their dorm in under 15 minutes — no need to step outside or pay delivery app fees.</p>
@@ -154,7 +148,7 @@ st.write("---")
 st.markdown("""
 <div style="text-align:center; margin-bottom:5px;">
   <h3>Quick Feedback</h3>
-  <p style="font-size:15px;">Tap an emoji to give 1-second feedback</p>
+  <p style="font-size:14px;">Tap an emoji to give 1-second feedback</p>
 </div>
 
 <div class="feedback">
@@ -181,7 +175,7 @@ st.markdown("""
 st.header("Contact Me")
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.markdown(f'''
+    st.markdown('''
     <div class="section" style="padding: 50px 40px;">
         <h2>Get in Touch</h2>
         <p>Have questions or want to get in touch? Use the form below!</p>
