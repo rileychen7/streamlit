@@ -133,37 +133,72 @@ with st.container():
         </div>
         ''', unsafe_allow_html=True)
 
-# --- Feedback Section ---
-st.write("---")
-st.markdown("""
-<div class="section" style="padding: 20px; text-align:center;">
-  <h4 style="margin-bottom: 15px;">Quick Feedback</h4>
-  <p>Tap an emoji to give 1-second feedback. It sends your response to my inbox instantly.</p>
-  <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
-    <button name="feedback" value="😀" style="font-size:28px; background:none; border:none; cursor:pointer;">😀</button>
-    <button name="feedback" value="😐" style="font-size:28px; background:none; border:none; cursor:pointer;">😐</button>
-    <button name="feedback" value="😞" style="font-size:28px; background:none; border:none; cursor:pointer;">😞</button>
-  </form>
-</div>
-""", unsafe_allow_html=True)
+with st.container():
+    st.write("---")
 
-# --- Contact Form Section ---
-col1, col2 = st.columns([3, 1])
-with col1:
-    st.markdown(f'''
-    <div class="section" style="padding: 50px 40px;">
-        <h2>Get in Touch</h2>
-        <p style="max-width: 100%;">Have questions or want to get in touch? Use the form below!</p>
-        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST" style="max-width: 100%;">
-            <div style="margin-bottom: 20px;">
-                <label for="email" style="font-size: 18px;">Your Email:</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <label for="message" style="font-size: 18px;">Your Message:</label>
-                <textarea id="message" name="message" required style="width: 100%; padding: 12px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send</button>
+    # 💬 Quick Emoji Feedback (Top Section)
+    st.markdown("""
+    <div style="text-align:center; margin-bottom: 30px;">
+        <h4 style="margin-bottom:10px;">Quick feedback</h4>
+        <p style="font-size:15px; color:gray; margin-top:-5px;">Tap an emoji to give 1-second feedback. It sends your response to me instantly.</p>
+        <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST" style="margin-top:10px;">
+            <input type="hidden" name="_subject" value="Quick Emoji Feedback">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit" name="feedback" value="😀" style="background:none;border:none;font-size:30px;cursor:pointer;">😀</button>
+            <button type="submit" name="feedback" value="😐" style="background:none;border:none;font-size:30px;cursor:pointer;">😐</button>
+            <button type="submit" name="feedback" value="😞" style="background:none;border:none;font-size:30px;cursor:pointer;">😞</button>
         </form>
     </div>
-    ''', unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
+
+    # 📬 Contact Form (Below)
+    contact_form = """
+    <form action="https://formsubmit.co/rchen92@buffalo.edu" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact Message from Riley's Portfolio">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message here" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    """
+
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.markdown(contact_form, unsafe_allow_html=True)
+    with right_column:
+        st.empty()
+
+    # 🎨 Styling (keeps your clean light look)
+    st.markdown("""
+        <style>
+        form {
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: "Inter", sans-serif;
+            font-size: 15px;
+        }
+        textarea {
+            height: 120px;
+        }
+        button {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s ease;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        </style>
+    """, unsafe_allow_html=True)
